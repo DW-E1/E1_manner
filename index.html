@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#5fb8f5">
+<meta name="description" content="동부1허브 · 비즈니스 매너 가이드. 양식 레스토랑 식사 매너부터.">
+<title>비즈니스 매너 가이드</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jua&family=Nanum+Gothic:wght@400;700;800&display=swap">
+<style>
+html,body{margin:0;padding:0} img{max-width:100%} [hidden]{display:none!important}
+</style>
+<style>
+/* ── 동부1허브 테마에 맞춤: 햇살 가득한 숲속 마을 (하늘 배경 · 양피지 창 · 나무 틀 · 주황 포인트) ── */
+:root{
+  --sky-1:#5fb8f5; --sky-2:#a9dcff; --sky-3:#e6f6ff;
+  --paper:#fffaf0; --paper-2:#fdf3df; --panel-3:#e3f3ff;
+  --wood:#b8783a; --wood-light:#dca061; --wood-dark:#7a4a1f;
+  --border:#e2c89d; --border-bright:#c08a4c;
+  --ink:#4a2d14; --text:#5e4329; --text-dim:#957a5b;
+  --accent:#ff9a1a; --accent-2:#ff7b00; --accent-soft:rgba(255,154,26,0.16);
+  --cyan:#2f8fd8; --cyan-soft:rgba(47,143,216,0.12);
+  --ok:#2f8f2a; --ok-soft:#effbe6; --ok-border:#9bd77a;
+  --err:#d4453a; --err-soft:#fdeceb; --err-border:#f0a8a2;
+  --radius:14px;
+  --title-font:'Jua','Nanum Gothic',sans-serif;
+  --body-font:'Nanum Gothic',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --win-shadow:inset 0 0 0 2px #fffdf7, 0 4px 0 var(--wood-dark), 0 12px 22px rgba(70,45,10,0.18);
+  --bg:var(--sky-2); --fg:var(--text);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{background:linear-gradient(180deg,var(--sky-1) 0%,var(--sky-2) 42%,var(--sky-3) 78%,#f4fbff 100%) fixed;color:var(--text);font-family:var(--body-font);line-height:1.7;font-size:14.5px;min-height:100vh}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--sky-1)}
+a{color:var(--accent-2)}
+.wrap{max-width:1040px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px;position:relative;z-index:1}
+h1,h2,h3{font-family:var(--title-font);font-weight:400;text-wrap:balance;margin:0;line-height:1.25;color:var(--ink);letter-spacing:.3px}
+.eyebrow{font-family:var(--title-font);font-size:12.5px;letter-spacing:.5px;color:var(--accent-2)}
+p{margin:0}
+.hidden{display:none!important}
+
+/* 상단 바: 간판 + 검색 */
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:linear-gradient(180deg,var(--sky-1),rgba(95,184,245,.92));border-bottom:3px solid var(--wood-dark);box-shadow:0 4px 0 rgba(90,52,18,.25)}
+header.top .in{max-width:1040px;margin:0 auto;display:flex;align-items:center;gap:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:10px}
+.brand{text-decoration:none;display:flex;align-items:center;gap:10px;font-family:var(--title-font);font-size:18px;color:#fff8e6;letter-spacing:.5px;
+  text-shadow:0 2px 0 #6b3d14,1.5px 0 0 #6b3d14,-1.5px 0 0 #6b3d14,0 -1.5px 0 #6b3d14;
+  padding:7px 18px;border-radius:12px;border:3px solid var(--wood-dark);
+  background:repeating-linear-gradient(180deg,transparent 0 13px,rgba(90,50,15,.2) 13px 15px),linear-gradient(180deg,#e3a862,#c4823f 55%,#a96a2e);
+  box-shadow:inset 0 2px 0 rgba(255,235,200,.6),0 4px 0 #5a3412}
+.brand .mark{font-size:16px;text-shadow:none}
+.crumb{font-family:var(--title-font);color:#fff8e6;font-size:14px;text-shadow:0 1.5px 0 #6b3d14,1px 0 0 #6b3d14,-1px 0 0 #6b3d14}
+.crumb span{margin:0 6px;opacity:.7}
+
+/* 홈 */
+.hero{padding-block:44px 28px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.hero h1{font-size:clamp(30px,5vw,44px);color:#fff8e6;margin-top:10px;
+  text-shadow:0 3px 0 #6b3d14,2px 0 0 #6b3d14,-2px 0 0 #6b3d14,0 -2px 0 #6b3d14,2px 3px 0 #6b3d14,-2px 3px 0 #6b3d14}
+.hero .eyebrow{display:inline-block;font-size:14px;color:#5a3300;background:linear-gradient(180deg,#ffe58a,#ffc93f);border:2px solid #b97600;border-radius:999px;padding:3px 16px;box-shadow:0 3px 0 #a86a00}
+.hero p{margin-top:16px;color:var(--ink);max-width:48ch;background:rgba(255,250,240,.82);border:2px solid var(--border);border-radius:999px;padding:6px 18px;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.cat{background:var(--paper);border:3px solid var(--wood);border-radius:var(--radius);box-shadow:var(--win-shadow);padding:20px 18px 16px;text-decoration:none;color:var(--text);display:flex;flex-direction:column;gap:8px;min-height:170px;transition:transform .16s ease,box-shadow .16s ease}
+.cat:hover,.cat:focus-visible{transform:translateY(-4px);box-shadow:inset 0 0 0 2px #fffdf7,0 6px 0 var(--wood-dark),0 18px 26px rgba(70,45,10,.22);outline:none}
+.cat .num{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:radial-gradient(circle at 35% 30%,#fff,#e3f3ff 70%);border:2px solid #9ccbf0;box-shadow:0 3px 0 #b9d9f2}
+.cat h3{font-size:19px}
+.cat p{color:var(--text-dim);font-size:13px;flex:1}
+.cat .tag{align-self:flex-start;font-family:var(--title-font);font-size:12.5px;padding:3px 12px;border-radius:999px;color:#5a2f00;background:linear-gradient(180deg,#ffe07a,#ffa21f);border:2px solid #c26a00;box-shadow:0 2px 0 #a85a00}
+.cat.soon{opacity:.6;pointer-events:none}
+.cat.soon .tag{background:#f5ecd9;border-color:#d8c4a0;color:var(--text-dim);box-shadow:none}
+
+/* 상세 */
+.detail{display:grid;grid-template-columns:190px minmax(0,1fr);gap:36px;padding-top:28px}
+nav.toc{position:sticky;top:calc(72px + env(safe-area-inset-top,0px));align-self:start;display:flex;flex-direction:column;gap:4px;background:var(--paper);border:3px solid var(--wood);border-radius:var(--radius);box-shadow:var(--win-shadow);padding:10px}
+nav.toc a{display:block;padding:6px 10px;font-size:13px;font-weight:700;color:var(--text-dim);text-decoration:none;border-radius:8px;border:2px solid transparent}
+nav.toc a:hover,nav.toc a.on{color:#5a2f00;background:var(--accent-soft);border-color:#ffc93f}
+.body{min-width:0;display:flex;flex-direction:column;gap:28px}
+.intro{background:var(--paper);border:3px solid var(--wood);border-radius:18px;box-shadow:var(--win-shadow);padding:0 22px 22px;overflow:hidden}
+.intro .back{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-family:var(--title-font);font-size:13px;color:#fff8e6;margin:14px 0 0}
+.intro .head{margin:0 -22px 18px;padding:12px 22px 14px;background:repeating-linear-gradient(180deg,transparent 0 13px,rgba(90,50,15,.2) 13px 15px),linear-gradient(180deg,#e3a862,#b97534);border-bottom:3px solid var(--wood-dark)}
+.intro .head .eyebrow{color:#ffe58a;font-size:12px}
+.intro h1{font-size:clamp(24px,4vw,32px);color:#fff8e6;margin-top:2px;text-shadow:0 2px 0 #6b3d14,1.5px 0 0 #6b3d14,-1.5px 0 0 #6b3d14,0 -1.5px 0 #6b3d14}
+.intro .lead{color:var(--text);max-width:58ch}
+.intro .lead b{color:var(--accent-2)}
+.quick{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.quick div{background:var(--paper-2);border:2px solid var(--border);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--text)}
+.quick b{display:block;font-family:var(--title-font);font-weight:400;font-size:13px;color:var(--accent-2);margin-bottom:2px}
+section.s{scroll-margin-top:calc(84px + env(safe-area-inset-top,0px));background:var(--paper);border:3px solid var(--wood);border-radius:var(--radius);box-shadow:var(--win-shadow);padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px}
+section.s h2{font-size:21px;padding-bottom:8px;border-bottom:2px dashed var(--border);display:flex;align-items:baseline;flex-wrap:wrap;gap:8px}
+section.s h2::before{content:"🪧";font-size:17px}
+section.s h2 small{font-family:var(--body-font);font-weight:700;font-size:12px;color:var(--text-dim)}
+.steps{display:flex;flex-direction:column;gap:12px;max-width:68ch}
+.step{display:grid;grid-template-columns:30px minmax(0,1fr);gap:12px;align-items:start}
+.step .n{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--title-font);font-size:13px;color:#5a2f00;background:linear-gradient(180deg,#ffe07a,#ffa21f);border:2px solid #c26a00;box-shadow:0 2px 0 #a85a00;margin-top:3px}
+.step h4{margin:0 0 2px;font-size:15px;font-weight:800;color:var(--ink)}
+.step p{color:var(--text);font-size:13.5px}
+.dodont{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.dodont>div{min-width:0}
+.dodont ul{margin:0;padding:12px 14px 12px 32px;border-radius:12px;font-size:13.5px;display:flex;flex-direction:column;gap:6px;border:2px solid}
+.dodont .do{background:var(--ok-soft);border-color:var(--ok-border)}
+.dodont .dont{background:var(--err-soft);border-color:var(--err-border)}
+.dodont .do li::marker{color:var(--ok);content:"○  ";font-weight:800}
+.dodont .dont li::marker{color:var(--err);content:"✕  ";font-weight:800}
+.dodont h4{margin:0 0 6px;font-family:var(--title-font);font-weight:400;font-size:14px}
+.do h4,.dodont>div:first-child h4{color:var(--ok)}
+.dodont>div:last-child h4{color:var(--err)}
+.note{border:2px solid #ffc93f;background:#fff6dc;padding:10px 14px;border-radius:12px;font-size:13.5px;max-width:68ch;color:var(--ink)}
+.note b{color:var(--accent-2)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:13.5px;background:#fffdf7;border:2px solid var(--border);border-radius:12px;overflow:hidden}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+th{font-family:var(--title-font);font-weight:400;font-size:13px;color:#5a2f00;background:var(--paper-2)}
+tr:last-child td{border-bottom:0}
+.tscroll{overflow-x:auto}
+
+/* 테이블 세팅 */
+.setting{background:var(--paper-2);border:2px solid var(--border);border-radius:12px;padding:14px;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(220px,1fr);gap:16px}
+@media (max-width:720px){.setting{grid-template-columns:1fr}}
+.setting svg{width:100%;height:auto;display:block;max-width:100%}
+.setting .hit{cursor:pointer}
+.setting .hit:hover .shape,.setting .hit.on .shape{stroke:var(--accent-2);stroke-width:2.4}
+.setting .hit:hover .lbl,.setting .hit.on .lbl{fill:var(--accent-2);font-weight:800}
+.shape{fill:#fffdf7;stroke:var(--wood-dark);stroke-width:1.5;transition:stroke .15s}
+.lbl{fill:var(--text-dim);font-size:9.5px;font-family:var(--body-font);font-weight:700}
+.info{display:flex;flex-direction:column;gap:6px;font-size:13.5px;min-width:0;background:var(--paper);border:2px solid var(--border);border-radius:12px;padding:12px 14px}
+.info .eyebrow{font-size:12px}
+.info h4{margin:0;font-family:var(--title-font);font-weight:400;font-size:18px;color:var(--ink)}
+.info p{color:var(--text)}
+.info .hint{margin-top:auto;font-size:12px;color:var(--text-dim);border-top:1px dashed var(--border);padding-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.chip{font-family:var(--title-font);font-size:12.5px;padding:3px 10px;border:2px solid #d8c4a0;border-radius:999px;background:#f5ecd9;color:var(--text-dim);cursor:pointer}
+.chip.on,.chip:hover{color:#5a2f00;background:linear-gradient(180deg,#ffe07a,#ffa21f);border-color:#c26a00;box-shadow:0 2px 0 #a85a00}
+.chip:focus-visible,.hit:focus-visible,.cat:focus-visible,nav a:focus-visible,.sr:focus-visible{outline:3px solid rgba(255,186,60,.7);outline-offset:2px}
+
+/* 커트러리 신호 */
+.signals{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.sig{background:var(--paper-2);border:2px solid var(--border);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;align-items:center;text-align:center}
+.sig svg{width:110px;height:110px}
+.sig b{font-family:var(--title-font);font-weight:400;font-size:16px;color:var(--ink)}
+.sig p{font-size:13px;color:var(--text)}
+footer{margin-top:48px;padding:12px 16px;text-align:center;color:#fff8e6;font-family:var(--title-font);font-size:13px;text-shadow:0 1.5px 0 #6b3d14,1px 0 0 #6b3d14,-1px 0 0 #6b3d14}
+
+/* 검색 */
+.search{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--paper);border:3px solid var(--wood);border-radius:999px;padding:0 10px 0 16px;color:var(--text-dim);min-width:0;flex:0 1 340px;box-shadow:inset 0 0 0 2px #fffdf7,0 3px 0 var(--wood-dark);transition:box-shadow .15s}
+.search:focus-within{box-shadow:inset 0 0 0 2px #fffdf7,0 3px 0 var(--wood-dark),0 0 0 4px rgba(255,186,60,.45)}
+.search svg{width:16px;height:16px;flex:none;color:var(--wood-dark)}
+.search input{border:0;background:transparent;color:var(--ink);font:inherit;font-size:14px;font-weight:700;outline:none;min-width:0;flex:1;padding:9px 0}
+.search input::placeholder{color:var(--text-dim);font-weight:400}
+.search input::-webkit-search-cancel-button{display:none}
+.search button{border:0;background:transparent;color:var(--text-dim);font-size:20px;line-height:1;cursor:pointer;padding:0 4px;border-radius:50%}
+.search button:hover{color:var(--accent-2)}
+.sr-head{padding-block:32px 18px;text-align:center}
+.sr-head h1{font-size:clamp(22px,4vw,30px);margin-top:8px;color:#fff8e6;text-shadow:0 2px 0 #6b3d14,1.5px 0 0 #6b3d14,-1.5px 0 0 #6b3d14,0 -1.5px 0 #6b3d14}
+.sr-head .lead{margin-top:8px;color:var(--ink);font-weight:700}
+.sr-head .eyebrow{display:inline-block;font-size:13px;color:#5a3300;background:linear-gradient(180deg,#ffe58a,#ffc93f);border:2px solid #b97600;border-radius:999px;padding:2px 14px;box-shadow:0 3px 0 #a86a00}
+.sr-list{display:flex;flex-direction:column;gap:12px;max-width:760px;margin:0 auto}
+.sr{display:block;text-decoration:none;color:var(--text);background:var(--paper);border:3px solid var(--wood);border-radius:var(--radius);box-shadow:var(--win-shadow);padding:14px 16px;transition:transform .16s,box-shadow .16s}
+.sr:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 2px #fffdf7,0 6px 0 var(--wood-dark),0 16px 24px rgba(70,45,10,.2)}
+.sr .path{font-size:12px;color:var(--text-dim);font-weight:700;margin-bottom:4px}
+.sr .path b{color:var(--accent-2)}
+.sr h4{margin:0 0 3px;font-size:16px;font-family:var(--title-font);font-weight:400;color:var(--ink)}
+.sr p{font-size:13.5px;color:var(--text);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+mark{background:#ffe58a;color:#5a2f00;padding:0 2px;border-radius:3px;font-weight:800}
+.sr-empty{color:var(--ink);padding:18px 20px;background:var(--paper);border:3px solid var(--wood);border-radius:var(--radius);box-shadow:var(--win-shadow);max-width:760px;margin:0 auto;text-align:center}
+.sr-empty .chips{margin-top:10px;justify-content:center}
+.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%,40%{box-shadow:0 0 0 4px #ffc93f}100%{box-shadow:0 0 0 0 transparent}}
+.step.flash,.sig.flash,tr.flash,li.flash{border-radius:8px}
+@media (max-width:860px){
+  header.top .in{flex-wrap:wrap;gap:10px}
+  .search{flex:1 0 100%;margin-left:0}
+  .crumb{display:none}
+  .brand{font-size:16px;padding:6px 14px}
+  .detail{grid-template-columns:1fr;gap:20px}
+  nav.toc{position:static;flex-direction:row;flex-wrap:wrap;gap:6px}
+  nav.toc a{border:2px solid #d8c4a0;background:#f5ecd9;border-radius:999px;padding:4px 11px;font-size:12.5px}
+  nav.toc a.on{border-color:#c26a00;background:linear-gradient(180deg,#ffe07a,#ffa21f);color:#5a2f00}
+  section.s{padding:14px 14px 16px}
+  .intro{padding:0 14px 16px}
+  .intro .head{margin:0 -14px 14px;padding:10px 14px 12px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="in">
+  <a class="brand" href="#home"><span class="mark">🎩</span>비즈니스 매너</a>
+  <div class="crumb" id="crumb"></div>
+  <form class="search" id="search-form" role="search" onsubmit="return false">
+    <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="12.5" y1="12.5" x2="17" y2="17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    <input type="search" id="q" placeholder="매너 검색 (예: 나이프, 냅킨, 계산)" autocomplete="off" aria-label="매너 검색">
+    <button type="button" id="q-clear" aria-label="검색 지우기" hidden>×</button>
+  </form>
+</div></header>
+
+<div class="wrap">
+
+<!-- ========== 검색 결과 ========== -->
+<div id="view-search" class="hidden">
+  <div class="sr-head">
+    <div class="eyebrow">🔍 검색</div>
+    <h1 id="sr-title">검색 결과</h1>
+    <p id="sr-count" class="lead"></p>
+  </div>
+  <div class="sr-list" id="sr-list"></div>
+</div>
+
+<!-- ========== 홈 ========== -->
+<div id="view-home">
+  <div class="hero">
+    <div class="eyebrow">동부1 매너 학교</div>
+    <h1>비즈니스 매너 가이드</h1>
+    <p>미팅·접대 전에 5분이면 훑어보는 매너 모음 ☀ 상황별 간판을 골라 들어가세요</p>
+  </div>
+  <div class="grid" id="cats">
+    <a class="cat" href="#western-dining">
+      <span class="num">🍽️</span>
+      <h3>양식 레스토랑 식사 매너</h3>
+      <p>착석부터 냅킨, 코스별 식기, 와인, 계산까지. 접대·회식에서 가장 자주 쓰는 매너.</p>
+      <span class="tag">입장하기 →</span>
+    </a>
+    <a class="cat soon" href="#home" aria-disabled="true">
+      <span class="num">🤝</span>
+      <h3>명함·인사·소개</h3>
+      <p>명함 주고받기, 소개 순서, 악수와 목례.</p>
+      <span class="tag">준비 중</span>
+    </a>
+    <a class="cat soon" href="#home" aria-disabled="true">
+      <span class="num">🪑</span>
+      <h3>자리 배치·차량 상석</h3>
+      <p>회의실, 식당, 승용차, 엘리베이터의 상석.</p>
+      <span class="tag">준비 중</span>
+    </a>
+    <a class="cat soon" href="#home" aria-disabled="true">
+      <span class="num">📧</span>
+      <h3>이메일·메신저·전화</h3>
+      <p>호칭, 참조 넣는 법, 회신 시간, 부재중 응대.</p>
+      <span class="tag">준비 중</span>
+    </a>
+  </div>
+</div>
+
+<!-- ========== 양식 레스토랑 ========== -->
+<div id="view-western" class="hidden">
+<div class="detail">
+  <nav class="toc" id="toc">
+    <a href="#western-dining" data-s="s-arrive">입장·착석</a>
+    <a href="#western-dining" data-s="s-napkin">냅킨</a>
+    <a href="#western-dining" data-s="s-setting">테이블 세팅</a>
+    <a href="#western-dining" data-s="s-course">코스 순서</a>
+    <a href="#western-dining" data-s="s-bread">빵·수프</a>
+    <a href="#western-dining" data-s="s-main">메인·스테이크</a>
+    <a href="#western-dining" data-s="s-signal">커트러리 신호</a>
+    <a href="#western-dining" data-s="s-wine">와인·음료</a>
+    <a href="#western-dining" data-s="s-talk">대화·휴대폰</a>
+    <a href="#western-dining" data-s="s-pay">계산·퇴장</a>
+    <a href="#western-dining" data-s="s-check">한눈에 체크</a>
+  </nav>
+
+  <div class="body">
+    <div class="intro">
+      <div class="head">
+        <a class="back" href="#home">← 마을 입구로</a>
+        <div class="eyebrow">🍽️ Western Dining</div>
+        <h1>양식 레스토랑 식사 매너</h1>
+      </div>
+      <p class="lead">원칙은 하나입니다. <b>바깥쪽 식기부터, 호스트의 속도에 맞춰, 조용히.</b> 나머지는 이 세 가지의 응용입니다.</p>
+      <div class="quick">
+        <div><b>식기 순서</b>바깥쪽 → 안쪽. 코스가 나올 때마다 가장 바깥 것을 씁니다.</div>
+        <div><b>빵·물 위치</b>빵은 왼쪽(B), 물·와인은 오른쪽(D). "BMW"로 외우세요.</div>
+        <div><b>시작 신호</b>호스트가 냅킨을 펴거나 포크를 들면 그때 시작합니다.</div>
+      </div>
+    </div>
+
+    <section class="s" id="s-arrive">
+      <h2>입장·착석 <small>Arrival &amp; Seating</small></h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h4>5~10분 일찍, 초대받은 쪽이라면 정시</h4><p>호스트(초대한 쪽)는 먼저 도착해 자리를 확인합니다. 초대받은 쪽이 너무 일찍 가면 호스트가 준비 못 한 상태로 맞게 됩니다.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h4>코트·가방은 맡기거나 보조 의자에</h4><p>외투는 입구 클로크에 맡깁니다. 가방은 등받이에 걸지 말고 발 옆이나 보조 의자에. 서류 가방은 테이블 위에 올리지 않습니다.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h4>자리는 안내받은 곳에, 상석은 벽을 등진 안쪽</h4><p>직원이 빼준 의자에 왼쪽에서 앉습니다. 상석은 입구에서 멀고 벽이나 창을 등지는 자리로, 주빈에게 양보합니다. 호스트는 입구 쪽에 앉습니다.</p></div></div>
+        <div class="step"><span class="n">4</span><div><h4>앉은 뒤 주문은 호스트가 리드</h4><p>초대받은 쪽은 중간 가격대를 고르거나 "추천해 주시는 걸로" 하면 무난합니다. 가장 비싼 것과 가장 싼 것은 피합니다.</p></div></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-napkin">
+      <h2>냅킨 <small>Napkin</small></h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h4>호스트가 펴면 따라 편다</h4><p>전원이 착석하고 호스트가 냅킨을 들면 그때 무릎 위에 올립니다. 주문 직후 또는 첫 요리 직전이 보통입니다.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h4>반으로 접어 접힌 쪽이 몸 쪽으로</h4><p>큰 냅킨은 반으로 접어 무릎에. 입을 닦을 땐 접힌 안쪽 면으로 가볍게 누르듯이. 셔츠 목에 끼우지 않습니다.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h4>잠시 자리를 비울 땐 의자 위에</h4><p>냅킨을 의자 좌석에 두면 "돌아옵니다"라는 뜻입니다. 테이블 위에 두는 것은 식사를 마쳤다는 신호입니다.</p></div></div>
+        <div class="step"><span class="n">4</span><div><h4>식사가 끝나면 접시 왼쪽에 느슨하게</h4><p>깔끔하게 다시 접지 말고 가볍게 모아 접시 왼쪽에 둡니다. 너무 정갈하게 접으면 쓰지 않은 것처럼 보여 오히려 어색합니다.</p></div></div>
+      </div>
+      <div class="note"><b>냅킨을 떨어뜨렸다면</b> 직접 줍지 말고 직원에게 새것을 부탁합니다. 바닥에 닿은 냅킨은 다시 쓰지 않습니다.</div>
+    </section>
+
+    <section class="s" id="s-setting">
+      <h2>테이블 세팅 <small>Place Setting · 눌러서 확인</small></h2>
+      <div class="setting">
+        <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" aria-label="양식 테이블 세팅 도해" id="svg-setting">
+          <!-- 접시 -->
+          <g class="hit" data-k="plate" tabindex="0" role="button" aria-label="접시">
+            <circle class="shape" cx="210" cy="178" r="62"/>
+            <circle class="shape" cx="210" cy="178" r="46" style="stroke-width:.8"/>
+            <text class="lbl" x="210" y="182" text-anchor="middle">메인 접시</text>
+          </g>
+          <!-- 빵 접시 -->
+          <g class="hit" data-k="bread" tabindex="0" role="button" aria-label="빵 접시">
+            <circle class="shape" cx="92" cy="70" r="26"/>
+            <line class="shape" x1="76" y1="56" x2="112" y2="80" style="stroke-width:1.2"/>
+            <text class="lbl" x="92" y="108" text-anchor="middle">빵 접시 (B)</text>
+          </g>
+          <!-- 왼쪽 포크 -->
+          <g class="hit" data-k="fork-salad" tabindex="0" role="button" aria-label="샐러드 포크">
+            <rect class="shape" x="108" y="130" width="7" height="92" rx="3"/>
+            <path class="shape" d="M105 130 v-18 h2 v14 h2 v-14 h2 v14 h2 v-14 h2 v18 z"/>
+            <text class="lbl" x="111" y="240" text-anchor="middle">샐러드</text>
+          </g>
+          <g class="hit" data-k="fork-main" tabindex="0" role="button" aria-label="메인 포크">
+            <rect class="shape" x="127" y="126" width="8" height="98" rx="3"/>
+            <path class="shape" d="M124 126 v-20 h2 v16 h2 v-16 h2 v16 h2 v-16 h2 v20 z"/>
+            <text class="lbl" x="131" y="240" text-anchor="middle">메인</text>
+          </g>
+          <!-- 오른쪽 나이프, 스푼 -->
+          <g class="hit" data-k="knife-main" tabindex="0" role="button" aria-label="메인 나이프">
+            <path class="shape" d="M286 108 h9 v22 q0 10 -4 14 v80 h-5 z"/>
+            <text class="lbl" x="289" y="240" text-anchor="middle">메인</text>
+          </g>
+          <g class="hit" data-k="knife-salad" tabindex="0" role="button" aria-label="샐러드 나이프">
+            <path class="shape" d="M306 112 h8 v20 q0 9 -4 13 v77 h-4 z"/>
+            <text class="lbl" x="309" y="240" text-anchor="middle">샐러드</text>
+          </g>
+          <g class="hit" data-k="spoon" tabindex="0" role="button" aria-label="수프 스푼">
+            <ellipse class="shape" cx="330" cy="122" rx="7" ry="12"/>
+            <rect class="shape" x="327" y="132" width="6" height="90" rx="3"/>
+            <text class="lbl" x="330" y="240" text-anchor="middle">수프</text>
+          </g>
+          <!-- 디저트 -->
+          <g class="hit" data-k="dessert" tabindex="0" role="button" aria-label="디저트 식기">
+            <rect class="shape" x="172" y="92" width="76" height="5" rx="2"/>
+            <rect class="shape" x="172" y="102" width="76" height="5" rx="2"/>
+            <text class="lbl" x="210" y="84" text-anchor="middle">디저트 포크·스푼</text>
+          </g>
+          <!-- 잔 -->
+          <g class="hit" data-k="water" tabindex="0" role="button" aria-label="물잔">
+            <path class="shape" d="M278 40 h22 l-3 28 h-16 z"/>
+            <rect class="shape" x="288" y="68" width="2" height="12"/>
+            <rect class="shape" x="280" y="80" width="18" height="3" rx="1"/>
+            <text class="lbl" x="289" y="96" text-anchor="middle">물</text>
+          </g>
+          <g class="hit" data-k="wine" tabindex="0" role="button" aria-label="와인잔">
+            <path class="shape" d="M318 26 q-10 10 -3 26 q4 6 9 6 q5 0 9 -6 q7 -16 -3 -26 z"/>
+            <rect class="shape" x="323" y="58" width="2" height="16"/>
+            <rect class="shape" x="316" y="74" width="16" height="3" rx="1"/>
+            <text class="lbl" x="324" y="92" text-anchor="middle">레드</text>
+          </g>
+          <g class="hit" data-k="wine" tabindex="0" role="button" aria-label="화이트 와인잔">
+            <path class="shape" d="M352 36 q-7 8 -2 22 q3 5 7 5 q4 0 7 -5 q5 -14 -2 -22 z"/>
+            <rect class="shape" x="356" y="63" width="2" height="12"/>
+            <rect class="shape" x="350" y="75" width="14" height="3" rx="1"/>
+            <text class="lbl" x="357" y="92" text-anchor="middle">화이트</text>
+          </g>
+          <text class="lbl" x="210" y="286" text-anchor="middle" style="font-size:9px">▲ 앉는 방향</text>
+        </svg>
+        <div class="info" id="setting-info">
+          <div class="chips" id="chips"></div>
+          <div class="eyebrow" id="si-eye">기본 원칙</div>
+          <h4 id="si-title">바깥쪽부터 안쪽으로</h4>
+          <p id="si-body">포크는 왼쪽, 나이프·스푼은 오른쪽. 코스가 나올 때마다 가장 바깥쪽 식기를 씁니다. 빵은 내 왼쪽, 잔은 내 오른쪽 것이 내 것입니다.</p>
+          <div class="hint">도해의 식기를 누르거나 위 칩을 선택하면 설명이 바뀝니다.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="s" id="s-course">
+      <h2>코스 순서 <small>Course Sequence</small></h2>
+      <div class="tscroll"><table>
+        <thead><tr><th style="width:52px">순서</th><th>코스</th><th>쓰는 식기</th><th>포인트</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>아페리티프·아뮤즈부슈</td><td>손 또는 작은 스푼</td><td>한입 크기. 건배 전엔 잔에 입을 대지 않습니다.</td></tr>
+          <tr><td>2</td><td>전채 (앙트레·애피타이저)</td><td>가장 바깥 포크·나이프</td><td>샐러드 잎은 접어서 한입에. 칼로 잘라도 됩니다.</td></tr>
+          <tr><td>3</td><td>수프</td><td>수프 스푼</td><td>몸 바깥쪽으로 떠서 소리 없이. 그릇을 들지 않습니다.</td></tr>
+          <tr><td>4</td><td>생선 요리</td><td>생선용 포크·나이프(있으면)</td><td>뒤집지 않고 윗살 → 뼈 제거 → 아랫살 순으로.</td></tr>
+          <tr><td>5</td><td>메인 (육류)</td><td>안쪽 큰 포크·나이프</td><td>왼쪽부터 한 조각씩 잘라 먹습니다.</td></tr>
+          <tr><td>6</td><td>치즈·디저트</td><td>접시 위쪽 디저트 포크·스푼</td><td>직원이 내려주면 포크는 왼쪽, 스푼은 오른쪽으로.</td></tr>
+          <tr><td>7</td><td>커피·차</td><td>티스푼</td><td>저은 스푼은 받침 접시에. 잔에 꽂아두지 않습니다.</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note"><b>코스가 짧은 경우</b> 전채–메인–디저트 3코스가 가장 흔합니다. 식기도 그만큼만 놓이므로 당황할 필요 없습니다.</div>
+    </section>
+
+    <section class="s" id="s-bread">
+      <h2>빵·수프 <small>Bread &amp; Soup</small></h2>
+      <div class="dodont">
+        <div><h4>이렇게</h4><ul class="do">
+          <li>빵은 한입 크기로 손으로 뜯어서, 뜯은 조각에만 버터를 발라 먹습니다.</li>
+          <li>버터는 공용 접시에서 내 빵 접시로 먼저 덜어온 뒤 바릅니다.</li>
+          <li>수프는 스푼을 몸 바깥쪽으로 밀어 뜨고, 스푼 옆면으로 소리 없이 마십니다.</li>
+          <li>거의 다 먹었을 때는 그릇을 바깥쪽으로 살짝 기울여 뜹니다.</li>
+          <li>수프를 다 먹으면 스푼은 받침 접시 위에, 받침이 없으면 그릇 안에 둡니다.</li>
+        </ul></div>
+        <div><h4>피하기</h4><ul class="dont">
+          <li>빵을 통째로 들고 베어 먹기, 나이프로 썰기.</li>
+          <li>빵을 수프에 찍어 먹기.</li>
+          <li>수프에 입김을 불어 식히기, 후루룩 소리 내기.</li>
+          <li>그릇을 들어 마시기.</li>
+          <li>빵 부스러기를 손으로 털어내기. 직원이 치워 줍니다.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-main">
+      <h2>메인·스테이크 <small>Main Course</small></h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h4>굽기 정도는 미리 정해두기</h4><p>레어 → 미디엄 레어 → 미디엄 → 미디엄 웰 → 웰던. 비즈니스 자리에서는 미디엄 또는 미디엄 웰이 가장 무난합니다. 주문 시 "미디엄으로 부탁드립니다"면 충분합니다.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h4>왼쪽에서 한 조각씩 잘라 먹기</h4><p>포크는 왼손, 나이프는 오른손. 한꺼번에 다 썰어두지 않습니다(한 번에 다 써는 것은 아이에게 해주는 방식입니다). 썬 뒤 포크를 오른손으로 바꿔 쥐는 미국식도 틀린 것은 아니지만, 비즈니스 자리에서는 유럽식(바꿔 쥐지 않음)이 깔끔합니다.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h4>나이프는 날이 안쪽(접시 쪽)으로</h4><p>칼날이 상대를 향하지 않게. 나이프를 입에 대지 않고, 포크로 음식을 긁어 올리지 않습니다.</p></div></div>
+        <div class="step"><span class="n">4</span><div><h4>소스·소금은 맛본 뒤에</h4><p>먹어보지도 않고 소금·후추를 치는 것은 셰프와 호스트의 선택을 무시하는 인상을 줍니다. 가니시는 먹어도 되고 남겨도 됩니다.</p></div></div>
+        <div class="step"><span class="n">5</span><div><h4>속도는 호스트와 좌우 사람에게 맞추기</h4><p>너무 빨리 끝내면 상대가 쫓기고, 너무 늦으면 다음 코스가 밀립니다. 대화 중에는 식기를 내려놓습니다.</p></div></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-signal">
+      <h2>커트러리 신호 <small>Cutlery Signals</small></h2>
+      <p style="color:var(--muted);max-width:66ch">직원은 접시 위 포크·나이프 위치로 치워도 되는지 판단합니다. 말로 설명할 필요 없이 이 두 가지만 기억하세요.</p>
+      <div class="signals">
+        <div class="sig">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <line x1="30" y1="82" x2="54" y2="30" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="90" y1="82" x2="66" y2="30" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/></svg>
+          <b>잠시 쉬는 중</b><p>포크와 나이프를 八자로 벌려 둡니다. 접시를 치우지 않습니다.</p>
+        </div>
+        <div class="sig">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <line x1="40" y1="90" x2="82" y2="46" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="48" y1="94" x2="90" y2="50" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/></svg>
+          <b>다 먹었습니다</b><p>포크와 나이프를 나란히 접시 오른쪽 아래(4시 방향)로 모아 둡니다. 손잡이가 테이블 쪽.</p>
+        </div>
+        <div class="sig">
+          <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="50" fill="var(--bg)" stroke="var(--line)" stroke-width="1.5"/>
+            <line x1="60" y1="18" x2="60" y2="102" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/>
+            <line x1="24" y1="60" x2="96" y2="60" stroke="var(--fg)" stroke-width="3.5" stroke-linecap="round"/></svg>
+          <b>다음 요리 기다림</b><p>십자로 두면 "이 접시는 두고, 다음 코스를 주세요". 자주 쓰진 않으니 몰라도 됩니다.</p>
+        </div>
+      </div>
+      <div class="note"><b>쓰던 식기를 테이블보에 올리지 마세요.</b> 한 번 든 포크·나이프는 접시 위에만 둡니다. 떨어뜨리면 줍지 말고 직원에게 새것을 부탁합니다.</div>
+    </section>
+
+    <section class="s" id="s-wine">
+      <h2>와인·음료 <small>Wine &amp; Drinks</small></h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h4>주문은 호스트, 테이스팅도 호스트</h4><p>와인은 호스트가 고르고 첫 잔을 확인합니다. 초대받은 쪽은 "잘 모르니 골라 주시면 좋겠습니다"로 넘기면 됩니다. 테이스팅은 "맛이 좋은가"가 아니라 "상했는가"를 확인하는 절차라 거절은 거의 없습니다.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h4>따라줄 때 잔을 들지 않기</h4><p>잔은 테이블에 둔 채로 받습니다. 한국식으로 두 손으로 들어 올리면 서버가 따르기 어렵습니다. 그만 받고 싶으면 잔 위에 손가락을 살짝 얹습니다.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h4>잔은 다리(스템)를 잡기</h4><p>볼을 손으로 감싸면 온도가 오르고 지문이 남습니다. 건배는 잔을 가볍게 들어 올리기만 해도 되고, 부딪힐 땐 볼의 불룩한 부분끼리 살짝.</p></div></div>
+        <div class="step"><span class="n">4</span><div><h4>술을 안 마셔도 잔은 그대로</h4><p>잔을 뒤집어 두지 않습니다. 따라주려 하면 "오늘은 괜찮습니다"라고 말로 사양하고, 물이나 탄산수로 건배에 참여합니다.</p></div></div>
+        <div class="step"><span class="n">5</span><div><h4>입을 닦은 뒤 마시기</h4><p>음식이 입에 있을 때 마시지 않고, 잔 테두리에 기름이 묻지 않도록 냅킨으로 입을 먼저 누릅니다. 립스틱 자국은 같은 자리에 입을 대 최소화합니다.</p></div></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-talk">
+      <h2>대화·휴대폰 <small>Conversation</small></h2>
+      <div class="dodont">
+        <div><h4>이렇게</h4><ul class="do">
+          <li>휴대폰은 무음으로 가방이나 주머니에. 테이블 위에 올리지 않습니다.</li>
+          <li>급한 연락이 예상되면 자리에 앉자마자 미리 양해를 구합니다.</li>
+          <li>업무 이야기는 주문이 끝나고 첫 요리가 나온 뒤, 또는 호스트가 꺼낼 때 시작합니다.</li>
+          <li>양옆 사람과 고르게 대화합니다. 한쪽만 붙잡고 이야기하지 않습니다.</li>
+          <li>음식이 입에 있을 때 질문을 받으면 손을 살짝 들어 "잠시만" 신호 후 삼키고 답합니다.</li>
+        </ul></div>
+        <div><h4>피하기</h4><ul class="dont">
+          <li>식사 중 통화, 테이블에서 화면 확인하기.</li>
+          <li>음식·가격·서비스에 대한 지적이나 큰 소리의 평가.</li>
+          <li>종교, 정치, 상대 회사의 인사·급여 같은 민감한 주제.</li>
+          <li>팔꿈치를 테이블에 올리거나 의자에 기대 다리 꼬기.</li>
+          <li>직원을 부를 때 소리 내거나 손뼉 치기. 눈을 맞추고 가볍게 손을 듭니다.</li>
+        </ul></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-pay">
+      <h2>계산·퇴장 <small>Paying &amp; Leaving</small></h2>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><h4>초대한 쪽이 냅니다</h4><p>계산은 호스트의 몫입니다. 고급 레스토랑에서는 호스트가 미리 카드를 맡겨두거나, 화장실에 가는 척 조용히 계산하는 것이 세련된 방법입니다. 테이블에서 지갑 꺼내 다투지 않습니다.</p></div></div>
+        <div class="step"><span class="n">2</span><div><h4>초대받은 쪽은 한 번만 제안</h4><p>"제가 하겠습니다"는 한 번이면 충분합니다. 호스트가 거절하면 "감사히 잘 먹었습니다"로 받습니다. 다음 자리를 제안하는 것이 가장 좋은 답례입니다.</p></div></div>
+        <div class="step"><span class="n">3</span><div><h4>자리는 호스트가 먼저 일어날 때</h4><p>디저트와 커피까지 끝나고 호스트가 냅킨을 테이블에 올리며 일어나는 것이 끝 신호입니다. 그 전에 먼저 일어나지 않습니다.</p></div></div>
+        <div class="step"><span class="n">4</span><div><h4>의자는 밀어 넣고, 직원에게 인사</h4><p>나갈 때 의자를 테이블 안쪽으로 살짝 밀어 넣습니다. 안내해 준 직원과 입구 직원에게 가볍게 인사합니다.</p></div></div>
+        <div class="step"><span class="n">5</span><div><h4>다음 날 오전 감사 연락</h4><p>초대받았다면 당일 저녁이나 다음 날 오전에 짧은 감사 메시지를 보냅니다. 메뉴나 대화 내용을 한 줄 언급하면 형식적이지 않게 읽힙니다.</p></div></div>
+      </div>
+    </section>
+
+    <section class="s" id="s-check">
+      <h2>한눈에 체크 <small>Quick Check</small></h2>
+      <div class="tscroll"><table>
+        <thead><tr><th style="width:120px">상황</th><th>기억할 것</th></tr></thead>
+        <tbody>
+          <tr><td>앉을 때</td><td>왼쪽에서 앉기 · 가방은 바닥 또는 보조 의자 · 상석은 주빈에게</td></tr>
+          <tr><td>냅킨</td><td>호스트 따라 무릎에 · 자리 비울 땐 의자 위 · 끝나면 접시 왼쪽</td></tr>
+          <tr><td>식기</td><td>바깥 → 안 · 빵은 왼쪽, 잔은 오른쪽 · 든 식기는 접시 위에만</td></tr>
+          <tr><td>빵·수프</td><td>뜯어서 한입씩 · 수프는 바깥쪽으로 떠서 소리 없이</td></tr>
+          <tr><td>메인</td><td>왼쪽부터 한 조각씩 · 맛보고 간하기 · 속도는 호스트에 맞춤</td></tr>
+          <tr><td>신호</td><td>八자 = 쉬는 중 · 4시 방향 나란히 = 끝</td></tr>
+          <tr><td>와인</td><td>잔 들지 않고 받기 · 스템 잡기 · 사양은 말로</td></tr>
+          <tr><td>휴대폰</td><td>무음, 테이블 위 금지 · 급한 연락은 사전 양해</td></tr>
+          <tr><td>계산</td><td>호스트 몫 · 제안은 한 번 · 호스트가 일어날 때 함께</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+  </div>
+</div>
+</div>
+
+<footer>🌳 동부1허브 · 비즈니스 매너 · 카테고리는 계속 추가됩니다</footer>
+</div>
+
+<script>
+(function(){
+  var SETTING = {
+    basic:{eye:"기본 원칙",t:"바깥쪽부터 안쪽으로",b:"포크는 왼쪽, 나이프·스푼은 오른쪽. 코스가 나올 때마다 가장 바깥쪽 식기를 씁니다. 빵은 내 왼쪽, 잔은 내 오른쪽 것이 내 것입니다."},
+    plate:{eye:"접시",t:"메인 접시 · 자리 접시",b:"처음 놓인 큰 접시(차저)는 장식용으로, 첫 요리가 나오면 직원이 치우거나 그 위에 요리 접시를 올립니다. 접시는 움직이거나 들지 않습니다."},
+    bread:{eye:"왼쪽 위",t:"빵 접시 · 버터 나이프",b:"내 빵 접시는 왼쪽 것입니다. 오른쪽 접시를 쓰면 옆 사람의 빵이 사라집니다. 버터 나이프는 빵 접시 위에 가로로 두고 빵을 자르는 데는 쓰지 않습니다."},
+    "fork-salad":{eye:"왼쪽 바깥",t:"샐러드·전채 포크",b:"작은 포크가 바깥쪽에 있으면 샐러드나 전채가 메인보다 먼저 나온다는 뜻입니다. 쓰고 나면 접시 위에 두고, 접시와 함께 치워집니다."},
+    "fork-main":{eye:"왼쪽 안쪽",t:"메인 포크",b:"접시에 가장 가까운 큰 포크. 메인 요리에 씁니다. 왼손으로 잡고 갈퀴가 아래를 향하게 음식을 고정합니다."},
+    "knife-main":{eye:"오른쪽 안쪽",t:"메인 나이프",b:"접시 바로 옆, 칼날이 접시를 향하게 놓입니다. 스테이크용은 톱니가 있는 별도 나이프로 교체되기도 합니다. 썬 뒤 나이프는 접시 위에 둡니다."},
+    "knife-salad":{eye:"오른쪽 중간",t:"샐러드·전채 나이프",b:"샐러드 포크의 짝. 전채에 나이프가 필요 없으면 생략되기도 합니다."},
+    spoon:{eye:"오른쪽 바깥",t:"수프 스푼",b:"둥글고 큰 스푼. 가장 바깥에 있으면 수프가 첫 코스입니다. 몸 바깥쪽으로 떠서 스푼 옆면으로 마십니다."},
+    dessert:{eye:"접시 위쪽",t:"디저트 포크·스푼",b:"가로로 놓인 작은 포크와 스푼. 디저트가 나오면 직원이 내려주거나, 직접 포크는 왼쪽·스푼은 오른쪽으로 내려서 씁니다."},
+    water:{eye:"오른쪽 위",t:"물잔",b:"나이프 끝 바로 위, 잔 중 가장 큰 것. 내 잔은 오른쪽 것입니다. 물은 직원이 채워주니 직접 물병을 들지 않아도 됩니다."},
+    wine:{eye:"오른쪽 위",t:"와인잔",b:"물잔 오른쪽으로 레드(큰 볼) → 화이트(작은 볼) 순. 스템(다리)을 잡고, 따라줄 때 잔을 들지 않습니다. 안 마실 땐 뒤집지 말고 말로 사양합니다."}
+  };
+  var chipOrder=["basic","plate","bread","fork-salad","fork-main","knife-main","knife-salad","spoon","dessert","water","wine"];
+  var chips=document.getElementById("chips");
+  chipOrder.forEach(function(k){
+    var b=document.createElement("button");b.className="chip";b.type="button";b.textContent=SETTING[k].t.split(" · ")[0];b.dataset.k=k;
+    b.addEventListener("click",function(){select(k)});chips.appendChild(b);
+  });
+  function select(k){
+    var d=SETTING[k]||SETTING.basic;
+    document.getElementById("si-eye").textContent=d.eye;
+    document.getElementById("si-title").textContent=d.t;
+    document.getElementById("si-body").textContent=d.b;
+    document.querySelectorAll("#chips .chip").forEach(function(c){c.classList.toggle("on",c.dataset.k===k)});
+    document.querySelectorAll("#svg-setting .hit").forEach(function(h){h.classList.toggle("on",h.dataset.k===k)});
+  }
+  document.querySelectorAll("#svg-setting .hit").forEach(function(h){
+    h.addEventListener("click",function(){select(h.dataset.k)});
+    h.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();select(h.dataset.k)}});
+  });
+  select("basic");
+
+  // 라우팅
+  var views={home:"view-home","western-dining":"view-western"};
+  var CAT_NAME={"western-dining":"양식 레스토랑 식사 매너"};
+  function showView(id){
+    ["view-search"].concat(Object.keys(views).map(function(k){return views[k]})).forEach(function(v){
+      document.getElementById(v).classList.toggle("hidden",v!==id);
+    });
+  }
+  function route(){
+    var h=(location.hash||"#home").slice(1);
+    if(!views[h])h="home";
+    showView(views[h]);
+    document.getElementById("crumb").innerHTML = h==="home" ? "" : '<span>/</span>'+CAT_NAME[h];
+    window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route);route();
+
+  // ===== 검색 =====
+  // 페이지에 쓰인 내용을 그대로 색인하므로, 카테고리를 추가해도 자동으로 검색됩니다.
+  var INDEX=[];
+  function addEntry(cat,hash,sec,secTitle,el,title,text){
+    var t=(title||"").trim(), x=(text||"").replace(/\s+/g," ").trim();
+    if(!t&&!x)return;
+    INDEX.push({cat:cat,hash:hash,sec:sec,secTitle:secTitle,el:el,title:t,text:x,hay:(t+" "+x).toLowerCase()});
+  }
+  Object.keys(views).forEach(function(hash){
+    if(hash==="home")return;
+    var view=document.getElementById(views[hash]), cat=CAT_NAME[hash]||hash;
+    view.querySelectorAll("section.s").forEach(function(sec){
+      var secTitle=sec.querySelector("h2").firstChild.textContent.trim();
+      sec.querySelectorAll(".step").forEach(function(s){addEntry(cat,hash,sec.id,secTitle,s,s.querySelector("h4").textContent,s.querySelector("p").textContent)});
+      sec.querySelectorAll(".dodont li").forEach(function(li){
+        var kind=li.parentNode.classList.contains("do")?"이렇게":"피하기";
+        addEntry(cat,hash,sec.id,secTitle,li,kind,li.textContent);
+      });
+      sec.querySelectorAll("tbody tr").forEach(function(tr){
+        var cells=[].map.call(tr.querySelectorAll("td"),function(td){return td.textContent});
+        addEntry(cat,hash,sec.id,secTitle,tr,cells[1]||cells[0],cells.slice(2).join(" · ")||cells[1]);
+      });
+      sec.querySelectorAll(".sig").forEach(function(s){addEntry(cat,hash,sec.id,secTitle,s,s.querySelector("b").textContent,s.querySelector("p").textContent)});
+      sec.querySelectorAll(".note").forEach(function(n){addEntry(cat,hash,sec.id,secTitle,n,n.querySelector("b")?n.querySelector("b").textContent:"참고",n.textContent)});
+    });
+    // 테이블 세팅 도해 설명
+    if(hash==="western-dining"){
+      var secEl=document.getElementById("s-setting");
+      Object.keys(SETTING).forEach(function(k){
+        var d=SETTING[k]; var hit=secEl.querySelector('.hit[data-k="'+k+'"]')||secEl;
+        var e={cat:cat,hash:hash,sec:"s-setting",secTitle:"테이블 세팅",el:secEl,title:d.t,text:d.b,hay:(d.eye+" "+d.t+" "+d.b).toLowerCase(),setting:k};
+        INDEX.push(e);
+      });
+    }
+  });
+  // 흔한 유의어: 검색어 → 함께 찾을 단어
+  var SYN={"나이프":["칼"],"칼":["나이프"],"포크":["갈퀴"],"잔":["글라스","와인잔","물잔"],"글라스":["잔"],"핸드폰":["휴대폰","전화"],"폰":["휴대폰"],"돈":["계산"],"결제":["계산"],"술":["와인","건배"],"빵":["버터"],"고기":["스테이크","육류"],"스테이크":["고기","육류"],"냅킨":["무릎"],"의자":["착석","앉"],"앉":["착석","의자"],"인사":["감사","퇴장"]};
+
+  function terms(q){
+    var base=q.toLowerCase().split(/\s+/).filter(Boolean), all=[];
+    base.forEach(function(t){all.push(t);(SYN[t]||[]).forEach(function(s){if(all.indexOf(s)<0)all.push(s)})});
+    return {base:base,all:all};
+  }
+  function esc(s){return s.replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+  function hl(s,ts){
+    var out=esc(s);
+    ts.forEach(function(t){ if(!t)return; var re=new RegExp("("+t.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"); out=out.replace(re,"<mark>$1</mark>"); });
+    return out;
+  }
+  var q=document.getElementById("q"), qClear=document.getElementById("q-clear"), srList=document.getElementById("sr-list"), srCount=document.getElementById("sr-count"), srTitle=document.getElementById("sr-title");
+  var lastHash="#home";
+  function runSearch(){
+    var raw=q.value.trim();
+    qClear.hidden=!raw;
+    if(raw.length<1){ showView(views[(location.hash||"#home").slice(1)]||"view-home"); return; }
+    var T=terms(raw);
+    var hits=INDEX.map(function(e){
+      var score=0;
+      T.base.forEach(function(t){ if(e.title.toLowerCase().indexOf(t)>=0)score+=3; if(e.hay.indexOf(t)>=0)score+=2; });
+      T.all.forEach(function(t){ if(e.hay.indexOf(t)>=0)score+=1; });
+      return {e:e,score:score};
+    }).filter(function(h){return h.score>0}).sort(function(a,b){return b.score-a.score});
+    srTitle.innerHTML='"'+esc(raw)+'" 검색 결과';
+    if(!hits.length){
+      srCount.textContent="";
+      srList.innerHTML='<div class="sr-empty">맞는 내용이 없습니다. 다른 말로 찾아보세요.<div class="chips">'+["나이프","냅킨","와인","계산","휴대폰","수프"].map(function(s){return '<button type="button" class="chip" data-q="'+s+'">'+s+'</button>'}).join("")+'</div></div>';
+    }else{
+      srCount.textContent=hits.length+"개 항목";
+      srList.innerHTML=hits.map(function(h,i){
+        var e=h.e;
+        return '<a class="sr" href="#'+e.hash+'" data-i="'+INDEX.indexOf(e)+'"><div class="path"><b>'+esc(e.cat)+'</b> <span>/</span> '+esc(e.secTitle)+'</div><h4>'+hl(e.title,T.all)+'</h4><p>'+hl(e.text,T.all)+'</p></a>';
+      }).join("");
+    }
+    showView("view-search");
+    window.scrollTo(0,0);
+  }
+  q.addEventListener("input",runSearch);
+  q.addEventListener("keydown",function(e){if(e.key==="Escape"){q.value="";runSearch();q.blur()}});
+  qClear.addEventListener("click",function(){q.value="";runSearch();q.focus()});
+  srList.addEventListener("click",function(ev){
+    var chip=ev.target.closest(".chip[data-q]");
+    if(chip){q.value=chip.dataset.q;runSearch();return;}
+    var a=ev.target.closest("a.sr"); if(!a)return;
+    ev.preventDefault();
+    var e=INDEX[+a.dataset.i];
+    q.value="";qClear.hidden=true;
+    if(location.hash!=="#"+e.hash){location.hash=e.hash;}else{route();}
+    setTimeout(function(){
+      if(e.setting)select(e.setting);
+      var target=e.el;
+      target.scrollIntoView({behavior:"smooth",block:"center"});
+      target.classList.remove("flash");void target.offsetWidth;target.classList.add("flash");
+    },60);
+  });
+  // 홈에서도 단축키 "/"로 검색창 포커스
+  document.addEventListener("keydown",function(e){if(e.key==="/"&&document.activeElement!==q){e.preventDefault();q.focus()}});
+
+  // 목차: 섹션 스크롤
+  var toc=document.getElementById("toc");
+  toc.querySelectorAll("a").forEach(function(a){
+    a.addEventListener("click",function(e){
+      e.preventDefault();
+      if(location.hash!=="#western-dining"){location.hash="western-dining";}
+      var el=document.getElementById(a.dataset.s);
+      if(el)el.scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+  if("IntersectionObserver" in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){
+        toc.querySelectorAll("a").forEach(function(a){a.classList.toggle("on",a.dataset.s===en.target.id)});
+      }});
+    },{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.s").forEach(function(s){io.observe(s)});
+  }
+})();
+</script>
+
+</body>
+</html>
